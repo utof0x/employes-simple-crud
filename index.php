@@ -1,7 +1,8 @@
 <?php
-
   $connection = require_once './Connection.php';
   $employees = $connection->getEmployees();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +17,7 @@
   <table class="table">
     <thead>
       <tr>
+        <th>Photo</th>
         <th>First Name</th>
         <th>Second Name</th>
         <th>Title</th>
@@ -27,6 +29,13 @@
     <tbody>
       <?php foreach ($employees as $employee): ?>
         <tr>
+          <td>
+            <img
+              style="width: 40px;"
+              src="data:image/jpeg;base64,<?php echo base64_encode($employee['photo']); ?>"
+              alt="Photo"
+            />
+          </td>
           <td><?php echo $employee['first_name'] ?></td>
           <td><?php echo $employee['last_name'] ?></td>
           <td><?php echo $employee['title'] ?></td>
@@ -34,7 +43,7 @@
           <td><?php echo $employee['email'] ?></td>
           <td>
             <a href="" class="btn btn-sm btn-outline-info">View</a>
-            <a href="" class="btn btn-sm btn-outline-secondary">Update</a>
+            <a href="update.php?id=<?php echo $employee['id'] ?>" class="btn btn-sm btn-outline-secondary">Update</a>
             <a href="" class="btn btn-sm btn-outline-danger">Delete</a>
           </td>
         </tr>
