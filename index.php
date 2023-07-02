@@ -1,3 +1,9 @@
+<?php
+
+  $connection = require_once './Connection.php';
+  $employees = $connection->getEmployees();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,16 +21,24 @@
         <th>Title</th>
         <th>Phone number</th>
         <th>Email</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Mock First Name</td>
-        <td>Mock Second Name</td>
-        <td>Mock Title</td>
-        <td>Mock Phone Number</td>
-        <td>Mock Email</td>
-      </tr>
+      <?php foreach ($employees as $employee): ?>
+        <tr>
+          <td><?php echo $employee['first_name'] ?></td>
+          <td><?php echo $employee['last_name'] ?></td>
+          <td><?php echo $employee['title'] ?></td>
+          <td><?php echo $employee['phone_number'] ?></td>
+          <td><?php echo $employee['email'] ?></td>
+          <td>
+            <a href="" class="btn btn-sm btn-outline-info">View</a>
+            <a href="" class="btn btn-sm btn-outline-secondary">Update</a>
+            <a href="" class="btn btn-sm btn-outline-danger">Delete</a>
+          </td>
+        </tr>
+        <?php endforeach; ?>
     </tbody>
   </table>
 </body>
