@@ -5,4 +5,5 @@ CREATE TABLE `sql_employee`.`employee` (
   `title` VARCHAR(255) NOT NULL,
   `phone_number` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
+  `photo` LONGBLOB,
   PRIMARY KEY (`id`));
