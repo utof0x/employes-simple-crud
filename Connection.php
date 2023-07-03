@@ -51,6 +51,21 @@ class Connection {
     $statement->bindValue('id', $id);
     return $statement->execute();
   }
+
+  public function addEmployee($data, $photo)
+  {
+    $statement = $this->pdo->prepare('
+      INSERT INTO employee (first_name, last_name, title, phone_number, email, photo)
+      VALUES (:first_name, :last_name, :title, :phone_number, :email, :photo)
+    ');
+    $statement->bindValue('first_name', $data['first_name']);
+    $statement->bindValue('last_name', $data['last_name']);
+    $statement->bindValue('title', $data['title']);
+    $statement->bindValue('phone_number', $data['phone_number']);
+    $statement->bindValue('email', $data['email']);
+    $statement->bindValue('photo', $photo);
+    return $statement->execute();
+  }
 }
 
 return new Connection();

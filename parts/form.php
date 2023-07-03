@@ -66,7 +66,13 @@
           <label>Image</label>
           <input name="photo" type="file" class="form-control-file">
         </div>
-        <button class="btn btn-success">Update</button>
+        <button class="btn btn-success">
+          <?php if (isset($_GET['id'])): ?>
+            Update employee
+            <?php else: ?>
+            Create employee
+          <?php endif; ?>
+        </button>
       </form>
     </div>
   </div>

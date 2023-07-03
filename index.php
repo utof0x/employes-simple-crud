@@ -14,41 +14,46 @@
   <title>Employee simple CRUD</title>
 </head>
 <body>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Photo</th>
-        <th>First Name</th>
-        <th>Second Name</th>
-        <th>Title</th>
-        <th>Phone number</th>
-        <th>Email</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($employees as $employee): ?>
+  <div class="container">
+    <p>
+      <a class="btn btn-success" href="create.php">Create new User</a>
+    </p>
+    <table class="table">
+      <thead>
         <tr>
-          <td>
-            <img
-              style="width: 40px;"
-              src="data:image/jpeg;base64,<?php echo base64_encode($employee['photo']); ?>"
-              alt="Photo"
-            />
-          </td>
-          <td><?php echo $employee['first_name'] ?></td>
-          <td><?php echo $employee['last_name'] ?></td>
-          <td><?php echo $employee['title'] ?></td>
-          <td><?php echo $employee['phone_number'] ?></td>
-          <td><?php echo $employee['email'] ?></td>
-          <td>
-            <a href="view.php?id=<?php echo $employee['id'] ?>" class="btn btn-sm btn-outline-info">View</a>
-            <a href="update.php?id=<?php echo $employee['id'] ?>" class="btn btn-sm btn-outline-secondary">Update</a>
-            <a href="delete.php?id=<?php echo $employee['id'] ?>" class="btn btn-sm btn-outline-danger">Delete</a>
-          </td>
+          <th>Photo</th>
+          <th>First Name</th>
+          <th>Second Name</th>
+          <th>Title</th>
+          <th>Phone number</th>
+          <th>Email</th>
+          <th>Actions</th>
         </tr>
-        <?php endforeach; ?>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <?php foreach ($employees as $employee): ?>
+          <tr>
+            <td>
+              <img
+                style="width: 40px;"
+                src="data:image/jpeg;base64,<?php echo base64_encode($employee['photo']); ?>"
+                alt="Photo"
+              />
+            </td>
+            <td><?php echo $employee['first_name'] ?></td>
+            <td><?php echo $employee['last_name'] ?></td>
+            <td><?php echo $employee['title'] ?></td>
+            <td><?php echo $employee['phone_number'] ?></td>
+            <td><?php echo $employee['email'] ?></td>
+            <td>
+              <a href="view.php?id=<?php echo $employee['id'] ?>" class="btn btn-sm btn-outline-info">View</a>
+              <a href="update.php?id=<?php echo $employee['id'] ?>" class="btn btn-sm btn-outline-secondary">Update</a>
+              <a href="delete.php?id=<?php echo $employee['id'] ?>" class="btn btn-sm btn-outline-danger">Delete</a>
+            </td>
+          </tr>
+          <?php endforeach; ?>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
