@@ -42,7 +42,7 @@
           <td><?php echo $employee['phone_number'] ?></td>
           <td><?php echo $employee['email'] ?></td>
           <td>
-            <a href="" class="btn btn-sm btn-outline-info">View</a>
+            <a href="view.php?id=<?php echo $employee['id'] ?>" class="btn btn-sm btn-outline-info">View</a>
             <a href="update.php?id=<?php echo $employee['id'] ?>" class="btn btn-sm btn-outline-secondary">Update</a>
             <a href="delete.php?id=<?php echo $employee['id'] ?>" class="btn btn-sm btn-outline-danger">Delete</a>
           </td>
