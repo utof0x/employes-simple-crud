@@ -18,10 +18,6 @@
       <div class="card-body">
         <a class="btn btn-secondary" href="update.php?id=<?php echo $employee['id'] ?>">Update</a>
         <a class="btn btn-danger" href="delete.php?id=<?php echo $employee['id'] ?>">Delete</a>
-        <!-- <form style="display: inline-block" method="POST" action="delete.php">
-          <input type="hidden" name="id" value="<?php echo $employee['id'] ?>">
-          <button class="btn btn-danger">Delete</button>
-        </form> -->
       </div>
       <table class="table">
         <tbody>
