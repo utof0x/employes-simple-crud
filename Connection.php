@@ -44,6 +44,13 @@ class Connection {
     $statement->bindValue('photo', $photo);
     return $statement->execute();
   }
+
+  public function deleteEmployee($id)
+  {
+    $statement = $this->pdo->prepare('DELETE FROM employee WHERE id = :id');
+    $statement->bindValue('id', $id);
+    return $statement->execute();
+  }
 }
 
 return new Connection();

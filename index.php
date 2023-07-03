@@ -44,7 +44,7 @@
           <td>
             <a href="" class="btn btn-sm btn-outline-info">View</a>
             <a href="update.php?id=<?php echo $employee['id'] ?>" class="btn btn-sm btn-outline-secondary">Update</a>
-            <a href="" class="btn btn-sm btn-outline-danger">Delete</a>
+            <a href="delete.php?id=<?php echo $employee['id'] ?>" class="btn btn-sm btn-outline-danger">Delete</a>
           </td>
         </tr>
         <?php endforeach; ?>
